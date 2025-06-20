@@ -17,7 +17,7 @@ export const ProfileCard = () => {
           src={avatarSrc.src}
           alt={"profile"}
           className={cn(
-            "object-cover !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white   transition duration-500",
+            "object-cover m-0! p-0! object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-white   transition duration-500",
             "absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2"
           )}
         />
