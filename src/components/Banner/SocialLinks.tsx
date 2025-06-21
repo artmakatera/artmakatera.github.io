@@ -23,13 +23,10 @@ export const SocialLinks = () => {
   ];
 
   return (
-    <div className="mt-1 grid grid-flow-col justify-center">
-      
-      {LINKS.map(({ key, url, icon,  color }) => (
-        <Button key={key}>
-          <a href={url}>
-            {icon}
-          </a>
+    <div className="mt-4 grid grid-flow-col gap-2 justify-center">
+      {LINKS.map(({ key, url, icon, color }) => (
+        <Button key={key} variant="outline">
+          <a href={url}>{icon}</a>
         </Button>
       ))}
     </div>

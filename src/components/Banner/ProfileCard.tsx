@@ -6,9 +6,9 @@ import { SocialLinks } from "./SocialLinks";
 import { Button } from "../ui/Button";
 import avatarSrc from "../../assets/avatar.jpg"; // Adjust the path as necessary
 
-export const ProfileCard = () => {
+export const ProfileCard = ({ translate }: { translate: any }) => {
   return (
-    <HoverCard className="h-fit relative">
+    <HoverCard className="relative h-fit" translate={translate}>
       <div className="h-24 cardGradient relative grid place-items-center">
         <div className="pb-2 font-extrabold text-xl">{"</>"} </div>
         <img

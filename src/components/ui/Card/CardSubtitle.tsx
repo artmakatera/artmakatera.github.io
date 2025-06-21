@@ -5,5 +5,5 @@ type CardSubtitleProps = {
 };
 
 export const CardSubtitle = ({ children }: CardSubtitleProps) => {
-  return <h3 className="text-gray-500 text-xs ">{children}</h3>;
+  return <h3 className="text-muted-foreground text-xs ">{children}</h3>;
 };
