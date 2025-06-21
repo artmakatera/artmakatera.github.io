@@ -1,4 +1,6 @@
 ---
+import { ThemeToggle } from "./ui/ThemeToggle";
+
 const PAGES = [
   { href: "#", label: "Home" },
   { href: "#about", label: "About" },
@@ -7,22 +9,27 @@ const PAGES = [
 ---
 
 <header
-  class="flex justify-between items-center h-16 w-full px-32 fixed top-0 left-0 backdrop-blur-lg shadow-md z-50"
+  class="h-16 w-full fixed top-0 left-0 backdrop-blur-lg shadow-md z-50"
 >
-  <a href='#'>
+  <div class="flex gap-8 justify-between items-center h-full container">
     <h1 class="text-2xl font-600">Artem Makatera</h1>
-  </a>
-  <nav>
-    <ul class="flex space-x-8">
-      {
-        PAGES.map((page) => (
-          <li>
-            <a href={`${page.href}`} class="text-gray-800 hover:text-gray-600">
-              {page.label}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
+
+    <nav class="flex justify-end grow">
+      <ul class="flex space-x-8">
+        {
+          PAGES.map((page) => (
+            <li>
+              <a
+                href={`${page.href}`}
+                class=" text-neutral-600 dark:text-neutral-400 hover:text-foreground transition-colors"
+              >
+                {page.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+    <ThemeToggle client:load />
+  </div>
 </header>
