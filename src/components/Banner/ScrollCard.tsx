@@ -30,12 +30,11 @@ export const ScrollCard = ({
       }}
       className=" -mt-12 mx-auto h-120 md:h-160 w-full border-4 border-[#6C6C6C] p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
-      <div className="bg-gray-100 h-full w-full rounded-2xl gap-4 overflow-hidden p-4 grid grid-cols-1 md:grid-cols-[200px_auto]">
-        <div>
+      <div className="bg-gray-100 py-28 h-full w-full rounded-2xl gap-4 overflow-hidden p-4 grid grid-cols-1 md:grid-cols-[250px_auto]">
+        <HoverCard className="bg-transparent" translate={translate}>
           <ProfileCard />
-       
-        </div>
-        <div className=" grid grid-cols-1  lg:grid-cols-3 gap-4 w-full h-full">
+        </HoverCard>
+        <div className=" grid grid-cols-1  lg:grid-cols-2 gap-4 w-full h-full">
           {users.map((user, idx: number) => (
             <HoverCard key={`user-${idx}`} translate={translate}>
               <div className="absolute top-2 right-2 rounded-full text-xs font-bold bg-white px-2 py-1">

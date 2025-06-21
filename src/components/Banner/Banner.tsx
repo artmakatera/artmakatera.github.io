@@ -2,6 +2,8 @@ import { ContainerScroll } from "./ContainerScrollAnimation";
 import { FlipWords } from "./FlipWords";
 import { cn } from "../../utils/cn";
 
+import mergeSortImg from "../../assets/merge-sort.png"
+
 // "Coding Your Dreams into Reality"
 // "Coding Your Vision into Reality"
 // "Coding Your Concepts into Reality"
@@ -68,10 +70,10 @@ export const users = [
     badge: "Mentor",
   },
   {
-    name: "Jane Smith",
-    designation: "Product Manager, Innovate Inc",
-    image: "https://picsum.photos/id/13/300/300",
-    badge: "Mentor",
+    name: "Merge Sort",
+    designation: "Sorting Algorithm",
+    image: mergeSortImg.src,
+    badge: "Sorting",
   },
   {
     name: "Robert Johnson",
