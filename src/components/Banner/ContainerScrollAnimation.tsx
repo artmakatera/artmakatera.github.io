@@ -58,7 +58,7 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[110vh] flex flex-col items-center justify-center relative lg:p-20 lg:px-24 mx-auto max-w-full lg:max-w-7xl"
+      className="h-[110vh] flex flex-col items-center justify-center relative sm:p-20 mx-auto max-w-6xl"
       ref={containerRef}
     >
       <div
@@ -83,12 +83,12 @@ export const ContainerScroll = ({
 
           scale: scaleKeyBoard,
         }}
-        className="w-full relative xl:block hidden drop-shadow-2xl"
+        className="w-full relative lg:block hidden drop-shadow-2xl"
       >
         <img
           src={keyboardImg.src}
           alt="Banner Laptop"
-          // className="dark:invert -z-10"
+          className="dark:brightness-60"
         />
       </motion.div>
     </div>

@@ -15,7 +15,7 @@ export const HoverCard = ({
 }: HoverCardProps) => {
   return (
     <motion.div
-      className={cn("bg-secondary rounded-md cursor-pointer relative", className)}
+      className={cn("bg-background dark:bg-secondary rounded-md cursor-pointer relative p-4 box-border", className)}
       style={{ translateY: translate }}
       whileHover={{
         boxShadow:

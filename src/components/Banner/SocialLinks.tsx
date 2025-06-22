@@ -1,31 +1,32 @@
+import { cn } from "../../utils/cn";
 import { Button } from "../ui/Button";
 import { Linkedin, Github, Mail } from "lucide-react";
 
-export const SocialLinks = () => {
+export const SocialLinks = ({ className }: { className?: string }) => {
   const LINKS = [
     {
       key: "gmail",
-      icon: <Mail size={18} />,
+      icon: <Mail size={32}  />,
       url: "mailto:artmakatera@gmail.com",
     },
     {
       key: "github",
-      icon: <Github size={18} />,
+      icon: <Github size={32}  />,
       url: "https://github.com/Artmac100",
       color: null,
     },
     {
       key: "linkedin",
-      icon: <Linkedin size={18} />,
+      icon: <Linkedin size={32}  />,
       url: "https://www.linkedin.com/in/artem-makatera-a19769a0/",
       color: null,
     },
   ];
 
   return (
-    <div className="mt-4 grid grid-flow-col gap-2 justify-center">
+    <div className={cn("grid grid-flow-col gap-2 justify-center", className)}>
       {LINKS.map(({ key, url, icon, color }) => (
-        <Button key={key} variant="outline">
+        <Button key={key} variant="outline" size="icon" className="size-12">
           <a href={url}>{icon}</a>
         </Button>
       ))}
