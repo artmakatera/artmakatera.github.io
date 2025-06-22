@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { HoverCard } from "./HoverCard";
-import { cn } from "../../utils/cn";
 import { SocialLinks } from "./SocialLinks";
 
 import avatarSrc from "../../assets/avatar.jpg"; // Adjust the path as necessary
@@ -8,21 +7,15 @@ import { CardTitle } from "../ui/Card/CardTitle";
 import { CardContent } from "../ui/Card/CardContent";
 import { ExperienceCard } from "./cards/Experience";
 import { PulsatingDot } from "../ui/PulsatingDot";
+import { CardSubtitle } from "../ui/Card/CardSubtitle";
 
 export const ScrollCard = ({
   rotate,
   translate,
-  users,
 }: {
   rotate: any;
   scale: any;
   translate: any;
-  users: {
-    name: string;
-    designation: string;
-    image: string;
-    badge?: string;
-  }[];
 }) => {
   return (
     <motion.div
@@ -36,21 +29,21 @@ export const ScrollCard = ({
     >
       <div className="bg-secondary dark:bg-background h-full w-full rounded-2xl gap-4 overflow-hidden p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4  ">
         <HoverCard
-          className="md:col-span-3 xl:col-span-4 grid md:grid-cols-[1fr_auto] items-center justify-between p-4"
+          className="md:col-span-3 xl:col-span-4 grid md:grid-cols-[1fr_auto] items-center justify-between px-4 py-0"
           translate={translate}
         >
           <div>
-            <span className="text-lg font-semibold text-primary text-center">
+            <span className="text-xl font-semibold text-primary text-center">
               Hi, I&apos;m Artem
             </span>
             <p className="text-sm text-muted-foreground hidden md:block">
-              Senior Javascript Developer
+              Senior Software Engineer
             </p>
           </div>
           <SocialLinks  className="hidden md:grid" />
         </HoverCard>
 
-        <HoverCard className="hidden md:block md:row-span-2 p-0" translate={translate}>
+        <HoverCard className="hidden md:block  p-0" translate={translate}>
           <img
             height={300}
             width={300}
@@ -60,7 +53,7 @@ export const ScrollCard = ({
           />
         </HoverCard>
         <HoverCard
-          className="row-span-2 md:col-span-2 flex flex-col gap-3"
+          className=" md:col-span-2 flex flex-col gap-3"
           translate={translate}
         >
           <CardTitle>About</CardTitle>
@@ -73,10 +66,13 @@ export const ScrollCard = ({
           </CardContent>
         </HoverCard>
         <HoverCard
-          className="md:row-span-3 flex flex-col gap-3"
+          className="md:row-span-2 flex flex-col gap-3"
           translate={translate}
         >
           <CardTitle>My skills</CardTitle>
+            <CardSubtitle>
+              Languages
+            </CardSubtitle>
           <CardContent>
             <ul className="list-disc pl-5">
               <li>JavaScript (ES6+)</li>

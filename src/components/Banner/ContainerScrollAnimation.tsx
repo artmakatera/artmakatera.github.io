@@ -1,33 +1,24 @@
-import React, { useRef } from "react";
+import { useRef, useState, useEffect, type ReactNode } from "react";
 import { useScroll, useTransform, motion } from "motion/react";
 
 // Components
 import { ScrollCard } from "./ScrollCard";
 
-import keyboardImg from "../../assets/keyboard.png"
-
-
+import keyboardImg from "../../assets/keyboard.png";
 
 export const ContainerScroll = ({
-  users,
   titleComponent,
 }: {
-  users: {
-    name: string;
-    designation: string;
-    image: string;
-    badge?: string;
-  }[];
-  titleComponent?: string | React.ReactNode;
+  titleComponent?: string | ReactNode;
 }) => {
-  const containerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "center center"],
   });
-  const [isMobile, setIsMobile] = React.useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -53,7 +44,7 @@ export const ContainerScroll = ({
     [0, 1],
     scaleDimensionsKeyBoard()
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -120]);
   const translateKeyboard = useTransform(scrollYProgress, [0, 1], [25, 0]);
 
   return (
@@ -69,16 +60,11 @@ export const ContainerScroll = ({
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <ScrollCard
-          rotate={rotate}
-          translate={translate}
-          scale={scale}
-          users={users}
-        />
+        <ScrollCard rotate={rotate} translate={translate} scale={scale} />
       </div>
       <motion.div
         style={{
-          // rotateX: rotate,
+          rotateX: rotate,
           translateY: translateKeyboard,
 
           scale: scaleKeyBoard,
