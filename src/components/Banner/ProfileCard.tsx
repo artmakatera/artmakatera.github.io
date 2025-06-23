@@ -1,4 +1,4 @@
-import { HoverCard } from "./HoverCard";
+import { AnimatedCard } from "./AnimatedCard";
 import { cn } from "../../utils/cn";
 import { CardTitle } from "../ui/Card/CardTitle";
 import { CardSubtitle } from "../ui/Card/CardSubtitle";
@@ -8,7 +8,7 @@ import avatarSrc from "../../assets/avatar.jpg"; // Adjust the path as necessary
 
 export const ProfileCard = ({ translate }: { translate: any }) => {
   return (
-    <HoverCard className="relative h-fit" translate={translate}>
+    <AnimatedCard className="relative h-fit" translate={translate}>
       <div className="h-24 cardGradient relative grid place-items-center">
         <div className="pb-2 font-extrabold text-xl">{"</>"} </div>
         <img
@@ -32,6 +32,6 @@ export const ProfileCard = ({ translate }: { translate: any }) => {
           Let's Build Together!
         </Button>
       </div>
-    </HoverCard>
+    </AnimatedCard>
   );
 };

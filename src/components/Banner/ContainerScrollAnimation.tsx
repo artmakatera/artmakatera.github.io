@@ -2,7 +2,7 @@ import { useRef, useState, useEffect, type ReactNode } from "react";
 import { useScroll, useTransform, motion } from "motion/react";
 
 // Components
-import { ScrollCard } from "./ScrollCard";
+import { ScrollDisplay } from "./ScrollDisplay";
 
 import keyboardImg from "../../assets/keyboard.png";
 
@@ -44,7 +44,7 @@ export const ContainerScroll = ({
     [0, 1],
     scaleDimensionsKeyBoard()
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -120]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -87]);
   const translateKeyboard = useTransform(scrollYProgress, [0, 1], [25, 0]);
 
   return (
@@ -60,7 +60,7 @@ export const ContainerScroll = ({
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <ScrollCard rotate={rotate} translate={translate} scale={scale} />
+        <ScrollDisplay rotate={rotate} translate={translate} scale={scale} />
       </div>
       <motion.div
         style={{

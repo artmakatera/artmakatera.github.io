@@ -26,7 +26,7 @@ export const SocialLinks = ({ className }: { className?: string }) => {
   return (
     <div className={cn("grid grid-flow-col gap-2 justify-center", className)}>
       {LINKS.map(({ key, url, icon, color }) => (
-        <Button key={key} variant="outline" size="icon" className="size-10">
+        <Button key={key} variant="outline" size="icon" className="size-11">
           <a href={url}>{icon}</a>
         </Button>
       ))}

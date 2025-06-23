@@ -1,27 +1,68 @@
+import { Download } from "lucide-react";
+
+import { Button } from "../../ui/Button";
 import { CardContent } from "../../ui/Card/CardContent";
 import { CardTitle } from "../../ui/Card/CardTitle";
-import { HoverCard } from "../HoverCard";
+import { AnimatedCard } from "../AnimatedCard";
 
+const EXPERIENCE = [
+  {
+    id: 1,
+    title: "Senior Software Engineer",
+    company: "Grid Dynamics",
+    duration: "2021 - Now",
+  },
+  {
+    id: 2,
+    title: "Front End Developer",
+    company: "Namecheap",
+    duration: "2019 - 2021",
+  },
+  {
+    id: 3,
+    title: "Fullstack Developer",
+    company: "Shark Software",
+    duration: "2017 - 2019",
+  },
+];
 
 export const ExperienceCard = ({ translate }: any) => {
   return (
-          
-
-    <HoverCard translate={translate} className=" md:col-span-2 flex flex-col gap-3">
+    <AnimatedCard
+      translate={translate}
+      className=" md:col-span-2 md:row-span-2 flex flex-col gap-2"
+    >
       <CardTitle>Experience</CardTitle>
       <CardContent>
-        <ul className="space-y-2 text-pretty">
-          <li>
-            <strong>Senior Software Engineer</strong> at Grid Dynamics – <strong className="text-card-foreground">Now</strong>
-          </li>
-          <li>
-            <strong>Front End Developer</strong> at Namecheap – <strong className="text-card-foreground">2019 - 2021</strong>
-          </li>
-          <li>
-            <strong>Fullstack Developer</strong> at Shark Software – <strong className="text-card-foreground">2017 - 2019</strong>
-          </li>
-        </ul>
+        <div className="space-y-2 divide-y text-pretty">
+          {EXPERIENCE.map((item) => (
+            <ExperienceItem key={item.id} {...item} />
+          ))}
+        </div>
+        <div>
+          <Button variant="outline" className="mt-4" elementType="a" href="/Artem Makatera Resume.pdf" download>
+            <span>Download Resume</span>
+            <Download className="inline mr-1" />
+          </Button>
+        </div>
       </CardContent>
-    </HoverCard>
+    </AnimatedCard>
   );
 };
+
+function ExperienceItem({
+  title,
+  duration,
+  company,
+}: (typeof EXPERIENCE)[number]) {
+  return (
+    <div className="flex items-center justify-between gap-2 pb-2">
+      <div>
+        <h3 className="text-pretty">{title}</h3>
+        <p className="text-xs text-muted-foreground">{company}</p>
+      </div>
+
+      <time className="text-muted-foreground">{duration}</time>
+    </div>
+  );
+}
