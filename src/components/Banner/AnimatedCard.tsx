@@ -8,6 +8,7 @@ type AnimatedCardProps = {
   translate?: MotionStyle["translate"];
   className?: string;
   style?: MotionStyle;
+  hoverEffect?: boolean;
 };
 
 export const AnimatedCard = ({
@@ -15,11 +16,13 @@ export const AnimatedCard = ({
   translate,
   className,
   style,
+  hoverEffect,
 }: AnimatedCardProps) => {
   return (
     <motion.div
       className={cn(
-        "bg-background dark:bg-secondary rounded-md cursor-pointer relative p-4 box-border shadow-lg",
+        "bg-background dark:bg-secondary rounded-md relative p-4 box-border shadow-lg",
+        hoverEffect && "cursor-pointer",
         className
       )}
       style={{
@@ -28,7 +31,6 @@ export const AnimatedCard = ({
        
       }}
       whileHover={{
-        scale: 1.02,
         boxShadow:
           "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
       }}
