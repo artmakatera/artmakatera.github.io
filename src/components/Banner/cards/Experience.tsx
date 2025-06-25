@@ -4,6 +4,7 @@ import { Button } from "../../ui/Button";
 import { CardContent } from "../../ui/Card/CardContent";
 import { CardTitle } from "../../ui/Card/CardTitle";
 import { AnimatedCard } from "../AnimatedCard";
+import type { MotionStyle } from "motion/react";
 
 const EXPERIENCE = [
   {
@@ -26,7 +27,9 @@ const EXPERIENCE = [
   },
 ];
 
-export const ExperienceCard = ({ translate }: any) => {
+export const ExperienceCard = ({ translate }: {
+  translate?: MotionStyle["translate"];
+}) => {
   return (
     <AnimatedCard
       translate={translate}

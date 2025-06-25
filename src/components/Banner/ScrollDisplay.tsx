@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, type MotionStyle } from "motion/react";
 import { AnimatedCard } from "./AnimatedCard";
 import { SocialLinks } from "./SocialLinks";
 
@@ -7,11 +7,14 @@ import { CardTitle } from "../ui/Card/CardTitle";
 import { CardContent } from "../ui/Card/CardContent";
 import { ExperienceCard } from "./cards/Experience";
 import { PulsatingDot } from "../ui/PulsatingDot";
-import { CardSubtitle } from "../ui/Card/CardSubtitle";
 import { cn } from "../../utils/cn";
-import { SkillsCard } from "./cards/Skills";
 import { Button } from "../ui/Button";
 import { AlgoCircuitCard, PhotographerCard } from "./cards/AlgoCurcuit";
+import { LatestPostsCard } from "./cards/LatestPosts";
+import { AboutCard } from "./cards/About";
+import { ContactCard } from "./cards/Contact";
+import { SkillsCard } from "./cards/Skills";
+import { useEffect, useRef, useState } from "react";
 
 export const ScrollDisplay = ({
   rotate,
@@ -19,7 +22,7 @@ export const ScrollDisplay = ({
 }: {
   rotate: any;
   scale: any;
-  translate: any;
+  translate?: MotionStyle["translate"];
 }) => {
   return (
     <motion.div
@@ -54,31 +57,9 @@ export const ScrollDisplay = ({
           }}
         />
 
-        <AnimatedCard
-          className=" md:col-span-2 flex flex-col gap-2"
-          translate={translate}
-        >
-          <CardTitle>About</CardTitle>
-          <CardContent>
-            Hi there! I'm Artem, a Senior JavaScript Developer.
-            I specialize in crafting high-performance, scalable, and
-            maintainable web applications. I thrive in dynamic, collaborative
-            environments that foster innovation, problem-solving, and continuous
-            learning.
-          </CardContent>
-        </AnimatedCard>
-        <AnimatedCard
-          className="hidden md:flex flex-col gap-2 row-span-[0.5]"
-          translate={translate}
-        >
-          <CardTitle>Contact</CardTitle>
-          <CardContent className="flex flex-col gap-4 grow justify-center">
-            <SocialLinks />
-            <Button variant="callToAction" className="m-0 text-xs w-full">
-              Let's Build Together!
-            </Button>
-          </CardContent>
-        </AnimatedCard>
+        <AboutCard translate={translate} />
+        <ContactCard translate={translate} />
+      
         <ExperienceCard translate={translate} />
         <AnimatedCard
           className="hidden md:flex flex-col gap-2"
@@ -90,61 +71,14 @@ export const ScrollDisplay = ({
             Currently I am working fulltime at Grid Dynamics.
           </CardContent>
         </AnimatedCard>
-        {/* <AnimatedCard
-          className="hidden md:flex flex-col gap-2"
-          translate={translate}
-        >
-          <CardTitle>Now</CardTitle>
-          <PulsatingDot className="absolute right-4 top-4 text-pretty" />
-          <CardContent>
-            Currently I am working fulltime at Grid Dynamics.
-          </CardContent>
-        </AnimatedCard> */}
         <AlgoCircuitCard translate={translate} />
         <PhotographerCard translate={translate} />
-
-        <AnimatedCard
-          className="hidden md:flex flex-col gap-2"
-          translate={translate}
-        >
-          <CardTitle>Now</CardTitle>
-          <CardContent>
-            Currently I am working fulltime at Grid Dynamics.
-          </CardContent>
-        </AnimatedCard>
-        <AnimatedCard
-          className="hidden md:flex flex-col gap-2"
-          translate={translate}
-        >
-          <CardTitle>Now</CardTitle>
-          <CardContent>
-            Currently I am working fulltime at Grid Dynamics.
-          </CardContent>
-        </AnimatedCard>
-        <AnimatedCard
-          className="hidden md:flex flex-col md:col-span-2 gap-2"
-          translate={translate}
-        >
-          <CardTitle>Latest Posts</CardTitle>
-          <CardContent>
-            <ul className="list-disc pl-4 text-pretty [&>li]:underline [&>li]:hover:text-muted-foreground">
-              <li> Unweighted Graph (BFS, DFS)</li>
-              <li>Binary Tree</li>
-              <li>Binary Search Visualization</li>
-            </ul>
-          </CardContent>
-        </AnimatedCard>
-        {/* <AnimatedCard
-          className="hidden md:flex flex-col gap-2"
-          translate={translate}
-        >
-          <CardTitle>Now</CardTitle>
-          <PulsatingDot className="absolute right-4 top-4 text-pretty" />
-          <CardContent>
-            Currently I am working fulltime at Grid Dynamics.
-          </CardContent>
-        </AnimatedCard> */}
+        <SkillsCard translate={translate} />
+        <LatestPostsCard translate={translate} />
       </div>
     </motion.div>
   );
 };
+
+
+

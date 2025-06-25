@@ -5,8 +5,13 @@ import imgAlgo from "../../../assets/algo.jpeg";
 import photographerImage from "../../../assets/photographer.png";
 import { CardContent } from "../../ui/Card/CardContent";
 import { cn } from "../../../utils/cn";
+import type { MotionStyle } from "motion/react";
 
-export const AlgoCircuitCard = ({ translate }: { translate: any }) => {
+export const AlgoCircuitCard = ({
+  translate,
+}: {
+  translate?: MotionStyle["translate"];
+}) => {
   return (
     <AnimatedCard className={cn("p-0 row-span-2")} translate={translate}>
       <div
@@ -21,8 +26,11 @@ export const AlgoCircuitCard = ({ translate }: { translate: any }) => {
   );
 };
 
-
-export const PhotographerCard = ({ translate }: { translate: any }) => {
+export const PhotographerCard = ({
+  translate,
+}: {
+  translate?: MotionStyle["translate"];
+}) => {
   return (
     <AnimatedCard className="p-0" translate={translate}>
       <div
@@ -35,4 +43,4 @@ export const PhotographerCard = ({ translate }: { translate: any }) => {
       ></div>
     </AnimatedCard>
   );
-}
+};

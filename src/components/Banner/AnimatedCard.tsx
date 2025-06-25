@@ -1,19 +1,20 @@
 import React from "react";
-import { motion } from "motion/react";
+import { motion, type MotionStyle } from "motion/react";
 import { cn } from "../../utils/cn";
+import type { HTMLAttributes } from "astro/types";
 
-type AnimatedCardProps = React.HTMLAttributes<HTMLDivElement> & {
+type AnimatedCardProps = {
   children?: React.ReactNode;
-  translate?: any;
+  translate?: MotionStyle["translate"];
   className?: string;
-  
+  style?: MotionStyle;
 };
 
 export const AnimatedCard = ({
   children,
   translate,
   className,
-  style
+  style,
 }: AnimatedCardProps) => {
   return (
     <motion.div
@@ -24,16 +25,13 @@ export const AnimatedCard = ({
       style={{
         translateY: translate,
         ...style,
-          // boxShadow:
-          //   "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
+       
       }}
       whileHover={{
         scale: 1.02,
         boxShadow:
           "0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1)",
-
       }}
-     
     >
       {children}
     </motion.div>

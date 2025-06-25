@@ -6,7 +6,7 @@ import { SocialLinks } from "./SocialLinks";
 import { Button } from "../ui/Button";
 import avatarSrc from "../../assets/avatar.jpg"; // Adjust the path as necessary
 
-export const ProfileCard = ({ translate }: { translate: any }) => {
+export const ProfileCard = ({ translate }: { translate?: string | number; }) => {
   return (
     <AnimatedCard className="relative h-fit" translate={translate}>
       <div className="h-24 cardGradient relative grid place-items-center">
