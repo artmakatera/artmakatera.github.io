@@ -26,7 +26,7 @@ const ImageCard = ({
   return (
     <AnimatedCard
       className={cn(
-        "p-0 overflow-hidden",
+        "p-0 overflow-hidden hidden xl:block",
         "hover:[&>.display-card-img]:scale-105 hover:[&>.display-card-overlay]:bg-black/50 hover:[&_.display-card-text]:translate-y-0",
         className
       )}

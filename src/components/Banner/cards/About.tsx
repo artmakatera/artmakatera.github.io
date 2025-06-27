@@ -15,10 +15,10 @@ export const AboutCard = ({
     >
       <CardTitle>About</CardTitle>
       <CardContent>
-        Hi there! I'm Artem, a Senior JavaScript Developer. I specialize in
-        crafting high-performance, scalable, and maintainable web applications.
-        I thrive in dynamic, collaborative environments that foster innovation,
-        problem-solving, and continuous learning.
+        I am a Senior JavaScript Developer with over 8 years experience building
+        and optimizing high-performance, scalable web applications. My focus is
+        on architecting robust front-end solutions that deliver seamless user
+        experiences and meet business objectives.
       </CardContent>
     </AnimatedCard>
   );

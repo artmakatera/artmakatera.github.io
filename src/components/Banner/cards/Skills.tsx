@@ -62,7 +62,7 @@ export function SkillsCard({
     <>
       <AnimatedCard className="flex flex-col gap-3 " translate={translate}>
         <CardTitle>Expert in</CardTitle>
-        <CardContent className="flex justify-between items-center gap-3 ">
+        <CardContent className="flex justify-around items-center gap-3 ">
           {MAIN_SKILLS.map((skill) => (
             <SkillItem key={skill.id} skill={skill} />
           ))}

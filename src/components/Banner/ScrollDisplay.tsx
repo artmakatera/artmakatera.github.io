@@ -34,7 +34,7 @@ export const ScrollDisplay = ({
       }}
       className=" -mt-12 mx-auto h-120 md:h-160 w-full border-4 border-[#6C6C6C] p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
-      <div className="bg-secondary dark:bg-background h-full w-full rounded-2xl gap-3 overflow-hidden p-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4  ">
+      <div className="bg-secondary dark:bg-background h-full w-full rounded-2xl gap-3 overflow-hidden p-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
         <motion.div
           className={cn(
             "md:col-span-3 xl:col-span-4 grid md:grid-cols-[1fr_auto] items-center justify-between px-4 py-4",
@@ -59,7 +59,7 @@ export const ScrollDisplay = ({
 
         <AboutCard translate={translate} />
         <ContactCard translate={translate} />
-      
+
         <ExperienceCard translate={translate} />
         <AnimatedCard
           className="hidden md:flex flex-col gap-2"
@@ -79,6 +79,3 @@ export const ScrollDisplay = ({
     </motion.div>
   );
 };
-
-
-
