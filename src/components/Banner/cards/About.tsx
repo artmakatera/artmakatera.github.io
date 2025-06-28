@@ -15,10 +15,7 @@ export const AboutCard = ({
     >
       <CardTitle>About</CardTitle>
       <CardContent>
-        I am a Senior JavaScript Developer with over 8 years experience building
-        and optimizing high-performance, scalable web applications. My focus is
-        on architecting robust front-end solutions that deliver seamless user
-        experiences and meet business objectives.
+        Hello, I'm Artem — a Senior JavaScript Developer with 8+ years of experience building scalable, high-performance web applications.
       </CardContent>
     </AnimatedCard>
   );

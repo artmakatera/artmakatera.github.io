@@ -76,7 +76,7 @@ export const PhotographerCard = ({
 }) => {
   return (
     <ImageCard
-      className="min-h-32"
+      className="min-h-25"
       imageUrl={photographerImage.src}
       title="Photographer"
       link="https://photographer.vercel.app/articles"

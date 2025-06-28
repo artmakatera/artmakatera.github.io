@@ -43,7 +43,7 @@ export const ExperienceCard = ({ translate }: {
           ))}
         </div>
         <div>
-          <Button variant="outline" className="mt-4" elementType="a" href="/Artem Makatera Resume.pdf" download>
+          <Button variant="outline" className="mt-2" elementType="a" href="/Artem Makatera Resume.pdf" download>
             <span>Download Resume</span>
             <Download className="inline mr-1" />
           </Button>
