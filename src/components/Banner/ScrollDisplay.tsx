@@ -15,6 +15,7 @@ import { AboutCard } from "./cards/About";
 import { ContactCard } from "./cards/Contact";
 import { SkillsCard } from "./cards/Skills";
 import { useEffect, useRef, useState } from "react";
+import { MobileHeader } from "./cards/MobileHeader";
 
 export const ScrollDisplay = ({
   rotate,
@@ -32,12 +33,18 @@ export const ScrollDisplay = ({
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
-      className=" -mt-12 mx-auto h-120 md:h-160 w-full border-4 border-[#6C6C6C] p-6 bg-[#222222] rounded-[30px] shadow-2xl"
+      className=" -mt-12 mx-auto h-120 md:h-160 w-full border-1 sm:border-4 border-[#6C6C6C] p-4 sm:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >
-      <div className="bg-secondary dark:bg-background h-full w-full rounded-2xl gap-3 overflow-hidden p-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4  ">
+      <div
+        className={cn(
+          "bg-secondary dark:bg-background h-full w-full rounded-2xl gap-2 sm:gap-3 overflow-hidden p-0 sm:p-3 ",
+          "grid  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
+        )}
+      >
+        <MobileHeader translate={translate} />
         <motion.div
           className={cn(
-            "md:col-span-3 xl:col-span-4 grid md:grid-cols-[1fr_auto] items-center justify-between px-4 py-4",
+            "hidden col-span-3 xl:col-span-4 md:grid md:grid-cols-[1fr_auto] items-center justify-between px-4 py-4",
             "text-4xl  text-primary text-center"
           )}
           style={{
@@ -62,7 +69,7 @@ export const ScrollDisplay = ({
 
         <ExperienceCard translate={translate} />
         <AnimatedCard
-          className="hidden md:flex flex-col gap-2"
+          className="hidden lg:flex flex-col gap-2"
           translate={translate}
         >
           <CardTitle>Now</CardTitle>

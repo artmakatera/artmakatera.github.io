@@ -33,7 +33,7 @@ export const ExperienceCard = ({ translate }: {
   return (
     <AnimatedCard
       translate={translate}
-      className=" md:col-span-2 md:row-span-2 flex flex-col gap-2"
+      className="sm:col-span-2 md:col-span-3 lg:col-span-2 sm:row-span-2 flex flex-col gap-2"
     >
       <CardTitle>Experience</CardTitle>
       <CardContent>
@@ -42,7 +42,7 @@ export const ExperienceCard = ({ translate }: {
             <ExperienceItem key={item.id} {...item} />
           ))}
         </div>
-        <div>
+        <div className="hidden sm:block">
           <Button variant="outline" className="mt-2" elementType="a" href="/Artem Makatera Resume.pdf" download>
             <span>Download Resume</span>
             <Download className="inline mr-1" />

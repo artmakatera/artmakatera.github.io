@@ -12,13 +12,16 @@ export const ContactCard = ({
 }) => {
   return (
     <AnimatedCard
-      className="hidden md:flex flex-col gap-2 row-span-[0.5]"
+      className="hidden lg:flex flex-col gap-2 row-span-[0.5]"
       translate={translate}
     >
       <CardTitle>Contact</CardTitle>
       <CardContent className="flex flex-col gap-4 grow justify-center">
-        <SocialLinks />
-        <Button variant="callToAction" className="m-0 text-xs w-full">
+        <SocialLinks className="md:gap-2" />
+        <Button
+          variant="callToAction"
+          className="m-0 text-[9px] md:text-xs w-full"
+        >
           Let's Build Together!
         </Button>
       </CardContent>

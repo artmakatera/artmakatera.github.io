@@ -49,13 +49,11 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[110vh] flex flex-col items-center justify-center relative sm:p-20 mx-auto max-w-6xl"
+      className="h-[110vh] flex flex-col items-center justify-center relative md:p-16 lg:p-20 mx-auto max-w-sm sm:max-w-xl  md:max-w-4xl lg:max-w-7xl"
       ref={containerRef}
     >
-      <div
-        className="pt-40 w-full relative"
-        style={{
-          width: "calc(100% - 140px)",
+      <div className="pt-32 px-8 md:pt-40 md:w-[calc(100%-140px)] w-full relative" 
+          style={{
           perspective: "1000px",
         }}
       >
@@ -69,7 +67,7 @@ export const ContainerScroll = ({
 
           scale: scaleKeyBoard,
         }}
-        className="w-full relative lg:block hidden drop-shadow-2xl"
+        className="w-full relative xl:block hidden drop-shadow-2xl"
       >
         <img
           src={keyboardImg.src}
@@ -87,7 +85,7 @@ export const Header = ({ translate, titleComponent }: any) => {
       style={{
         translateY: translate,
       }}
-      className="div max-w-6xl mx-auto text-center"
+      className="hidden sm:block max-w-6xl mx-auto text-center"
     >
       {titleComponent}
     </motion.div>

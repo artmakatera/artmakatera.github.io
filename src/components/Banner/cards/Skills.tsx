@@ -60,20 +60,20 @@ export function SkillsCard({
 }) {
   return (
     <>
-      <AnimatedCard className="flex flex-col gap-3 " translate={translate}>
+      <AnimatedCard className="flex flex-col gap-3" translate={translate}>
         <CardTitle>Expert in</CardTitle>
-        <CardContent className="flex justify-around items-center gap-3 ">
+        <CardContent className=" flex justify-around items-center gap-3 ">
           {MAIN_SKILLS.map((skill) => (
             <SkillItem key={skill.id} skill={skill} />
           ))}
         </CardContent>
       </AnimatedCard>
       <AnimatedCard
-        className="flex flex-col gap-3 col-span-2"
+        className="flex flex-col gap-3 md:col-span-2 max-w-full h-max overflow-x-hidden"
         translate={translate}
       >
         <CardTitle>Work with</CardTitle>
-        <CardContent className="flex justify-between items-center gap-3">
+        <CardContent className=" justify-between items-center gap-3">
           <InfiniteMovingList>
             {OTHER_SKILLS.map((skill) => (
               <SkillItem key={skill.id} skill={skill} />

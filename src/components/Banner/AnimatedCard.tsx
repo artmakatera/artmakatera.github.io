@@ -21,7 +21,7 @@ export const AnimatedCard = ({
   return (
     <motion.div
       className={cn(
-        "bg-background dark:bg-secondary rounded-md relative p-4 box-border shadow-lg",
+        "bg-background dark:bg-secondary sm:rounded-md relative p-4 box-border shadow-lg",
         hoverEffect && "cursor-pointer",
         className
       )}

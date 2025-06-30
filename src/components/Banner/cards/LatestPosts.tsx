@@ -12,11 +12,11 @@ export const LatestPostsCard = ({
 }) => {
   return (
      <AnimatedCard
-             className="hidden md:flex flex-col md:col-span-1 gap-2"
+             className="hidden xl:flex flex-col gap-2"
              translate={translate}
            >
              <CardTitle>Latest Posts</CardTitle>
-             <CardContent className="text-xs">
+             <CardContent className="text-xs lg:text-xs">
                <ul className="list-disc pl-2 text-pretty [&>li]:underline [&>li]:hover:text-muted-foreground [&>li]:leading-relaxed">
                 <li>
                   <a href="https://algo-curcuit.vercel.app/articles/binary-tree">Binary Tree Visualization</a>
