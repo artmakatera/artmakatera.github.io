@@ -1,30 +1,4 @@
-// import React from "react";
-// import { cn } from "../../utils/cn";
 
-// const BUTTON_CLASSES = {
-//   outlined:
-//     "p-1 rounded-full text-black bg-white hover:bg-gray-100 transition duration-200",
-//   callToAction:
-//     "text-white bg-linear-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2",
-// };
-
-// type ButtonProps = {
-//   children: React.ReactNode;
-//   className?: string;
-//   variant?: keyof typeof BUTTON_CLASSES;
-// };
-
-// export const Button = ({
-//   children,
-//   className,
-//   variant = "outlined",
-// }: ButtonProps) => {
-//   return (
-//     <button className={cn(BUTTON_CLASSES[variant], className)}>
-//       {children}
-//     </button>
-//   );
-// };
 
 
 import * as React from "react"
@@ -35,7 +9,7 @@ import { cn } from "../../utils/cn"
 
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  "cursor-pointer inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
   {
     variants: {
       variant: {
@@ -51,7 +25,7 @@ const buttonVariants = cva(
           "hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50",
         link: "text-primary underline-offset-4 hover:underline",
          callToAction:
-    "text-white bg-linear-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2",
+    "text-white bg-linear-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-linear-to-br focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm p-1 text-center mb-2",
       },
       size: {
         default: "h-9 px-4 py-2 has-[>svg]:px-3",
@@ -67,17 +41,19 @@ const buttonVariants = cva(
   }
 )
 
-function Button({
+function Button<T extends React.ElementType>({
+  elementType = "button",
   className,
   variant,
   size,
   asChild = false,
   ...props
-}: React.ComponentProps<"button"> &
+}: React.ComponentProps<T> &
   VariantProps<typeof buttonVariants> & {
-    asChild?: boolean
+    asChild?: boolean;
+    elementType?: T;
   }) {
-  const Comp = asChild ? Slot : "button"
+  const Comp = asChild ? Slot : elementType
 
   return (
     <Comp

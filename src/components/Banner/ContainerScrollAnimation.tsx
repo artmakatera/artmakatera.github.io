@@ -1,33 +1,24 @@
-import React, { useRef } from "react";
+import { useRef, useState, useEffect, type ReactNode } from "react";
 import { useScroll, useTransform, motion } from "motion/react";
 
 // Components
-import { ScrollCard } from "./ScrollCard";
+import { ScrollDisplay } from "./ScrollDisplay";
 
-import keyboardImg from "../../assets/keyboard.png"
-
-
+import keyboardImg from "../../assets/keyboard.png";
 
 export const ContainerScroll = ({
-  users,
   titleComponent,
 }: {
-  users: {
-    name: string;
-    designation: string;
-    image: string;
-    badge?: string;
-  }[];
-  titleComponent?: string | React.ReactNode;
+  titleComponent?: string | ReactNode;
 }) => {
-  const containerRef = useRef<any>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "center center"],
   });
-  const [isMobile, setIsMobile] = React.useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
     };
@@ -53,32 +44,25 @@ export const ContainerScroll = ({
     [0, 1],
     scaleDimensionsKeyBoard()
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -92]);
   const translateKeyboard = useTransform(scrollYProgress, [0, 1], [25, 0]);
 
   return (
     <div
-      className="h-[110vh] flex flex-col items-center justify-center relative lg:p-20 lg:px-24 mx-auto max-w-full lg:max-w-7xl"
+      className="h-[110vh] flex flex-col items-center justify-center relative md:p-16 lg:p-20 mx-auto max-w-sm sm:max-w-xl  md:max-w-4xl lg:max-w-7xl"
       ref={containerRef}
     >
-      <div
-        className="pt-40 w-full relative"
-        style={{
-          width: "calc(100% - 140px)",
+      <div className="pt-32 px-8 md:pt-40 md:w-[calc(100%-140px)] w-full relative" 
+          style={{
           perspective: "1000px",
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <ScrollCard
-          rotate={rotate}
-          translate={translate}
-          scale={scale}
-          users={users}
-        />
+        <ScrollDisplay rotate={rotate} translate={translate} scale={scale} />
       </div>
       <motion.div
         style={{
-          // rotateX: rotate,
+          rotateX: rotate,
           translateY: translateKeyboard,
 
           scale: scaleKeyBoard,
@@ -88,7 +72,7 @@ export const ContainerScroll = ({
         <img
           src={keyboardImg.src}
           alt="Banner Laptop"
-          // className="dark:invert -z-10"
+          className="dark:brightness-60"
         />
       </motion.div>
     </div>
@@ -101,7 +85,7 @@ export const Header = ({ translate, titleComponent }: any) => {
       style={{
         translateY: translate,
       }}
-      className="div max-w-6xl mx-auto text-center"
+      className="hidden sm:block max-w-6xl mx-auto text-center"
     >
       {titleComponent}
     </motion.div>
