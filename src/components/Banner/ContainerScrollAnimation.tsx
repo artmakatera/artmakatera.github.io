@@ -44,7 +44,7 @@ export const ContainerScroll = ({
     [0, 1],
     scaleDimensionsKeyBoard()
   );
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -87]);
+  const translate = useTransform(scrollYProgress, [0, 1], [0, -92]);
   const translateKeyboard = useTransform(scrollYProgress, [0, 1], [25, 0]);
 
   return (

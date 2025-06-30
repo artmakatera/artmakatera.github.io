@@ -20,7 +20,6 @@ export const AboutCard = ({
       <CardContent>
         I'm Artem — a Senior JavaScript Developer with 8+ years of
         experience building scalable, high-performance web applications. 
-        I specialize in React, Node.js, and TypeScript.
       </CardContent>
     </AnimatedCard>
   );
