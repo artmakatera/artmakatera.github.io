@@ -1,48 +1,111 @@
-# Astro Starter Kit: Basics
+# Artem Makatera - Personal Website
 
-```sh
-npm create astro@latest -- --template basics
+A modern, responsive personal portfolio website featuring smooth animations, dark mode support, and mobile-first design.
+
+## ✨ Features
+
+- **🚀 Fast & Modern**: Built with Astro for optimal performance and SEO
+- **📱 Responsive Design**: Mobile-first approach with hamburger menu navigation
+- **🌙 Dark Mode**: Seamless light/dark theme switching with system preference detection
+- **⚡ Interactive UI**: Smooth animations and transitions using Framer Motion
+- **🎨 Beautiful Components**: Custom-designed cards, badges, and UI elements
+- **♿ Accessible**: Keyboard navigation, ARIA labels, and semantic HTML
+- **📊 Skills Showcase**: Interactive skills section with technology logos
+- **📬 Contact Integration**: Easy-to-find contact information and social links
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Astro](https://astro.build/) - Static site generator
+- **UI Library**: [React](https://reactjs.org/) - Component-based UI
+- **Styling**: [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- **Animations**: [Framer Motion](https://www.framer.com/motion/) - Animation library
+- **Icons**: [Lucide React](https://lucide.dev/) & [MDI](https://materialdesignicons.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/) - Headless UI primitives
+- **Type Safety**: [TypeScript](https://www.typescriptlang.org/) - Static type checking
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+ 
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd personal-website-astro
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+2. Install dependencies:
+```bash
+npm install
+```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+3. Start the development server:
+```bash
+npm run dev
+```
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+4. Open your browser and visit `http://localhost:4321`
 
-## 🚀 Project Structure
+## 🧞 Available Commands
 
-Inside of your Astro project, you'll see the following folders and files:
+| Command | Action |
+| :-- | :-- |
+| `npm install` | Install project dependencies |
+| `npm run dev` | Start local development server at `localhost:4321` |
+| `npm run build` | Build production site to `./dist/` |
+| `npm run preview` | Preview production build locally |
+| `npm run astro ...` | Run Astro CLI commands |
 
-```text
+## 📁 Project Structure
+
+```
 /
-├── public/
-│   └── favicon.svg
+├── public/                 # Static assets
+│   ├── favicon.svg
+│   ├── robots.txt
+│   └── Artem Makatera Resume.pdf
 ├── src/
-│   ├── layouts/
+│   ├── assets/            # Images and graphics
+│   │   ├── tools-logo/    # Technology logos
+│   │   └── *.{png,jpg,svg}
+│   ├── components/        # Reusable components
+│   │   ├── Header.astro   # Main navigation
+│   │   ├── Banner/        # Hero section components
+│   │   └── ui/            # UI primitives
+│   ├── hooks/             # Custom React hooks
+│   │   ├── useTheme.ts    # Theme management
+│   │   └── useDimensions.ts
+│   ├── layouts/           # Page layouts
 │   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+│   ├── pages/             # Route pages
+│   │   └── index.astro
+│   ├── styles/            # Global styles
+│   │   └── global.css
+│   └── utils/             # Utility functions
+│       └── cn.ts          # Class name utilities
+├── astro.config.mjs       # Astro configuration
+├── tailwind.config.js     # TailwindCSS configuration
+└── tsconfig.json          # TypeScript configuration
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
 
-## 🧞 Commands
 
-All commands are run from the root of the project, from a terminal:
+## 📄 License
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+This is a personal portfolio website. All rights reserved.
 
-## 👀 Want to learn more?
+## � Contact
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+**Artem Makatera**
+- Portfolio: [Your Website URL]
+- LinkedIn: [Your LinkedIn]
+- Email: [Your Email]
+- GitHub: [Your GitHub]
+
+---
+
+Built with ❤️ using Astro and modern web technologies.
