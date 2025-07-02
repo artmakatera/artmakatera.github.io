@@ -44,12 +44,12 @@ export default function ContactForm() {
 
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-2xl backdrop-blur-sm">
+      <div className="bg-background p-6 rounded-2xl backdrop-blur-sm">
         <header className="text-center mb-6">
-          <h4 className="text-2xl font-semibold text-gray-900 dark:text-gray-100 mb-2">
+          <h4 className="text-2xl font-semibold text-foreground mb-2">
             Send Me a Message
           </h4>
-          <p className="text-gray-600 dark:text-gray-400">
+          <p className="text-muted-foreground">
             Ready to discuss your project? Fill out the form below.
           </p>
         </header>
@@ -86,7 +86,7 @@ export default function ContactForm() {
           <StatusMessage status={submitStatus} />
 
           <div className="pt-6 border-t border-gray-200 dark:border-gray-700">
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-4">
+            <p className="text-center text-muted-foreground mb-4">
               Or connect with me directly:
             </p>
             <div className="flex justify-center">

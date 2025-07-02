@@ -19,13 +19,13 @@ export const FormField = ({
 }) => {
   const isTextarea = type === "textarea";
   const inputClassName =
-    "w-full px-3 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors";
+    "w-full px-3 py-2 border border-gray-300 dark:border-gray-600  text-muted-foreground rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors";
 
   return (
     <div>
       <label
         htmlFor={name}
-        className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+        className="block text-sm font-medium text-muted-foreground mb-2"
       >
         {label} {required && <span className="text-red-500">*</span>}
       </label>
