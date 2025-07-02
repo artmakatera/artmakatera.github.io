@@ -1,6 +1,6 @@
 import type { Project } from "./types";
 import photographerImage from "../../../assets/photographer.png";
-import g from "../../../assets/algo.jpeg";
+import algoBg from "../../../assets/algo-bg.png";
 
 
 export const projectsData: Project[] = [
@@ -21,7 +21,7 @@ export const projectsData: Project[] = [
     title: "Algo Circuit - Technical Articles",
     description:
       "An open-source algorithm visualization platform that helps developers understand algorithms and data structures through interactive visual representations. This ongoing project serves as a comprehensive learning resource for computer science students and enthusiasts. Contributions and collaborations are welcome!",
-    image: g.src ||
+    image: algoBg.src ||
       "https://placehold.co/800x500/F0F8FF/36454F?text=Algo+Circuit+Articles",
     link: "https://algo-curcuit.vercel.app/articles",
     linkText: "Read Articles",
