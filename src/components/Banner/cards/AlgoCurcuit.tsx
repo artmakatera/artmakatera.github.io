@@ -3,7 +3,6 @@ import { AnimatedCard } from "../AnimatedCard";
 
 import imgAlgo from "../../../assets/algo.jpeg";
 import photographerImage from "../../../assets/photographer.png";
-import { CardContent } from "../../ui/Card/CardContent";
 import { cn } from "../../../utils/cn";
 import type { MotionStyle } from "motion/react";
 import { ExternalLink } from "lucide-react";
