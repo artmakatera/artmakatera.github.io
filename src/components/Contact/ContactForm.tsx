@@ -20,7 +20,7 @@ export default function ContactForm() {
 
       try {
         // Simulate form submission
-       const res =  await fetch("http://telegram-micro.vercel.app/send-message", {
+       const res =  await fetch("https://telegram-micro.vercel.app/send-message", {
           body: JSON.stringify(data),
           method: "POST",
           headers: {
