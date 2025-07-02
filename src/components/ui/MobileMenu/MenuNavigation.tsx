@@ -44,14 +44,12 @@ const MenuItem = ({ index, page }: { index: number; page: Page }) => {
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.95 }}
     >
-      <li key={page.href}>
         <a
           href={page.href}
           className="text-foreground text-2xl transition-colors"
         >
           {page.label}
         </a>
-      </li>
     </motion.li>
   );
 };
