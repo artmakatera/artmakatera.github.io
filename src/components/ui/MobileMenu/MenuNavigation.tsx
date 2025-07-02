@@ -11,10 +11,10 @@ const navVariants = {
   },
 };
 
-export const MenuNavigation = ({ pages }: { pages: Page[] }) => (
+export const MenuNavigation = ({ pages, onPageChange }: { pages: Page[], onPageChange: () => void }) => (
   <motion.ul className="p-8 fixed top-12 left-0" variants={navVariants}>
     {pages.map((page, i) => (
-      <MenuItem key={i} page={page} />
+      <MenuItem key={i} page={page} onClick={onPageChange} />
     ))}
   </motion.ul>
 );
@@ -36,7 +36,7 @@ const itemVariants = {
   },
 };
 
-const MenuItem = ({ page }: { page: Page }) => {
+const MenuItem = ({ page, onClick }: { page: Page, onClick: () => void }) => {
   return (
     <motion.li
       className="flex items-center justify-start mb-5 cursor-pointer"
@@ -47,6 +47,8 @@ const MenuItem = ({ page }: { page: Page }) => {
       <a
         href={page.href}
         className="text-foreground text-2xl transition-colors"
+        onClick={onClick}
+        aria-label={page.label}
       >
         {page.label}
       </a>

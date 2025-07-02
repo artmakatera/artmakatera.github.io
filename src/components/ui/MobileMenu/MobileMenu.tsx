@@ -19,7 +19,7 @@ export const MobileMenu = ({ pages }: MobileMenuProps) => {
       className="h-fit sm:hidden"
     >
       <motion.div className="bg-muted absolute top-0 left-0 bottom-0 w-screen h-screen" variants={sidebarVariants} />
-      <MenuNavigation pages={pages} />
+      <MenuNavigation pages={pages} onPageChange={() => setIsOpen(false)} />
       <MenuToggle toggle={() => setIsOpen(!isOpen)} />
     </motion.nav>
   );
