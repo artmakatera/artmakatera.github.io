@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.3.0",
+    "@lucide/astro": "^0.525.0",
     "@mdi/js": "^7.4.47",
     "@mdi/react": "^1.6.1",
     "@radix-ui/react-dropdown-menu": "^2.1.15",

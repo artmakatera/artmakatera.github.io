@@ -14,7 +14,7 @@ const navVariants = {
 export const MenuNavigation = ({ pages }: { pages: Page[] }) => (
   <motion.ul className="p-8 fixed top-12 left-0" variants={navVariants}>
     {pages.map((page, i) => (
-      <MenuItem index={i} key={i} page={page} />
+      <MenuItem key={i} page={page} />
     ))}
   </motion.ul>
 );
@@ -36,7 +36,7 @@ const itemVariants = {
   },
 };
 
-const MenuItem = ({ index, page }: { index: number; page: Page }) => {
+const MenuItem = ({ page }: { page: Page }) => {
   return (
     <motion.li
       className="flex items-center justify-start mb-5 cursor-pointer"
@@ -44,12 +44,12 @@ const MenuItem = ({ index, page }: { index: number; page: Page }) => {
       whileHover={{ scale: 1.01 }}
       whileTap={{ scale: 0.95 }}
     >
-        <a
-          href={page.href}
-          className="text-foreground text-2xl transition-colors"
-        >
-          {page.label}
-        </a>
+      <a
+        href={page.href}
+        className="text-foreground text-2xl transition-colors"
+      >
+        {page.label}
+      </a>
     </motion.li>
   );
 };

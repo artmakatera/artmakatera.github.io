@@ -1,0 +1,67 @@
+---
+import Section from "../ui/Section.astro";
+import { Braces, CodeXml, FlaskConical, Puzzle, Workflow, Zap } from "@lucide/astro";
+import ServiceCard, {
+  type Props as ServiceCardProps,
+} from "./ServiceCard.astro";
+
+const services: ServiceCardProps[] = [
+  {
+    title: "Front-End Development",
+    description:
+      "Designing and developing robust, scalable, and maintainable front-end solutions using modern JavaScript frameworks like React, Next.js, and Vue.js.",
+    icon: CodeXml,
+    iconColor: "text-yellow-500",
+  },
+  {
+    title: "Performance Optimization",
+    description:
+      "Enhancing web application speed and responsiveness through techniques like memoization, virtualization, and efficient asset loading for large datasets.",
+    icon: Zap,
+    iconColor: "text-green-500",
+  },
+  {
+    title: "Third-Party Integration",
+    description:
+      "Seamlessly integrating external tools and APIs (e.g., Apryse, BIM Viewer, AutoCAD) to expand application functionality for complex business needs.",
+    icon: Puzzle,
+    iconColor: "text-orange-500",
+  },
+  {
+    title: "Unit & Integration Testing",
+    description:
+      "Implementing comprehensive testing strategies with Vitest, React Testing Library, and Playwright to ensure code quality and stability.",
+    icon: FlaskConical,
+    iconColor: "text-blue-500",
+  },
+  {
+    title: "Backend Integration (Node.js)",
+    description:
+      "Connecting front-end applications with various backend services and databases (e.g., Node.js, Express.js, PostgreSQL, MongoDB).",
+    icon: Braces,
+    iconColor: "text-purple-500",
+  },
+  {
+    title: "CI/CD & Deployment",
+    description:
+      "Setting up and optimizing continuous integration and deployment pipelines using Docker, GitHub Actions, and GitLab CI for efficient delivery.",
+    icon: Workflow,
+    iconColor: "text-red-500",
+  },
+];
+---
+
+<Section id="services" title="My Services" isMuted>
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    {
+      services.map((service) => (
+        <ServiceCard
+          title={service.title}
+          description={service.description}
+          icon={service.icon}
+          iconColor={service.iconColor}
+        />
+      ))
+    }
+  </div>
+</Section>

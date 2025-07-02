@@ -28,7 +28,7 @@ const words = [
 
 export default function Banner() {
   return (
-    <div>
+    <div className="pb-16 md:mb-24 ">
       <ContainerScroll
         titleComponent={
           <div
