@@ -1,6 +1,4 @@
-
-
-
+import { cn } from "../../utils/cn";
 
 export const FormField = ({
   name,
@@ -10,7 +8,7 @@ export const FormField = ({
   placeholder,
   rows,
 }: {
-  name:string;
+  name: string;
   label: string;
   type?: string;
   required?: boolean;
@@ -18,8 +16,12 @@ export const FormField = ({
   rows?: number;
 }) => {
   const isTextarea = type === "textarea";
-  const inputClassName =
-    "w-full px-3 py-2 border border-gray-300 dark:border-gray-600  text-muted-foreground rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors";
+  const inputClassName = cn(
+    "w-full px-3 py-2 border placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground dark:bg-input/30 border-input ",
+    "flex min-h-9 w-full min-w-0 rounded-md border bg-transparent text-base shadow-xs transition-[color,box-shadow] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
+     "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
+     "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
+  );
 
   return (
     <div>

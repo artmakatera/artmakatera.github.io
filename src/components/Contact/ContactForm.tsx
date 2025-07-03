@@ -20,13 +20,16 @@ export default function ContactForm() {
 
       try {
         // Simulate form submission
-       const res =  await fetch("https://telegram-micro.vercel.app/send-message", {
-          body: JSON.stringify(data),
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-        });
+        const res = await fetch(
+          "https://telegram-micro.vercel.app/send-message",
+          {
+            body: JSON.stringify(data),
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+          }
+        );
 
         if (!res.ok) {
           throw new Error("Failed to send message");
@@ -43,8 +46,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto">
-      <div className="bg-background p-6 rounded-2xl backdrop-blur-sm">
+    <div className="max-w-2xl -mx-8 -mb-16 sm:mb-0 sm:mx-auto ">
+      <div className="bg-background p-6 sm:rounded-2xl backdrop-blur-sm">
         <header className="text-center mb-6">
           <h4 className="text-2xl font-semibold text-foreground mb-2">
             Send Me a Message
