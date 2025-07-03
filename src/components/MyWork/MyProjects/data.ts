@@ -26,6 +26,6 @@ export const projectsData: Project[] = [
     link: "https://algo-curcuit.vercel.app/articles",
     linkText: "Read Articles",
     tags: [ "Algorithms", "Data Structures", "Visualization", "D3.js", "Motion.js"],
-    imageClassName: "object-contain m-2", // Custom class for specific styling
+    imageClassName: "object-contain object-center m-2", // Custom class for specific styling
   },
 ];

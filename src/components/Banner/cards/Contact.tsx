@@ -19,6 +19,8 @@ export const ContactCard = ({
       <CardContent className="flex flex-col gap-4 grow justify-center">
         <SocialLinks className="md:gap-2" />
         <Button
+          elementType="a"
+          href="#contact"
           variant="callToAction"
           className="m-0 text-[9px] md:text-xs w-full"
         >

@@ -12,7 +12,7 @@ export const SocialLinks = ({ className }: { className?: string }) => {
     {
       key: "github",
       icon: <Github size={32}  />,
-      url: "https://github.com/Artmac100",
+      url: "https://github.com/artmakatera",
       color: null,
     },
     {
