@@ -77,6 +77,7 @@ export const PhotographerCard = ({
     <ImageCard
       className="min-h-25"
       imageUrl={photographerImage.src}
+      backgroundPosition=" center 0px"
       title="Photographer"
       link="https://photographer.vercel.app/articles"
       translate={translate}
