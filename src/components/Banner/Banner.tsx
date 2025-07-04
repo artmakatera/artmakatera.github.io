@@ -2,8 +2,6 @@ import { ContainerScroll } from "./ContainerScrollAnimation";
 import { FlipWords } from "./FlipWords";
 import { cn } from "../../utils/cn";
 
-import mergeSortImg from "../../assets/merge-sort.png"
-
 // "Coding Your Dreams into Reality"
 // "Coding Your Vision into Reality"
 // "Coding Your Concepts into Reality"
