@@ -1,31 +1,48 @@
-import{ useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
+
 import { cn } from "../../utils/cn";
 
+const WORDS = [
+  "Ideas",
+  "Dreams",
+  "Vision",
+  "Concepts",
+  "Innovations",
+  "Designs",
+  "Projects",
+  "Plans",
+  "Solutions",
+];
+
 export const FlipWords = ({
-  words,
   duration = 3000,
   className,
 }: {
-  words: string[];
   duration?: number;
   className?: string;
 }) => {
-  const [currentWord, setCurrentWord] = useState(words[0]);
-  const [isAnimating, setIsAnimating] = useState<boolean>(false);
-
-  const startAnimation = useCallback(() => {
-    const word = words[words.indexOf(currentWord) + 1] || words[0];
-    setCurrentWord(word);
-    setIsAnimating(true);
-  }, [currentWord, words]);
+  const [isAnimating, setIsAnimating] = useState<boolean>(true);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const currentWord = WORDS[currentWordIndex];
 
   useEffect(() => {
-    if (!isAnimating)
-      setTimeout(() => {
-        startAnimation();
+    let timeoutId = null;
+
+    if (isAnimating) {
+      timeoutId = setTimeout(() => {
+        const nextIndex = (currentWordIndex + 1) % WORDS.length;
+        setCurrentWordIndex(nextIndex);
+        setIsAnimating(true);
       }, duration);
-  }, [isAnimating, duration, startAnimation]);
+    }
+
+    return () => {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [duration, currentWordIndex]);
 
   return (
     <AnimatePresence
@@ -33,41 +50,47 @@ export const FlipWords = ({
         setIsAnimating(false);
       }}
     >
-      <motion.div
-        initial={{
-          opacity: 0,
-          y: 10,
-        }}
-        animate={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 100,
-          damping: 10,
-        }}
+      <div
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2",
+          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 mx-2",
           className
         )}
-        key={currentWord}
       >
-        {currentWord.split("").map((letter, index) => (
-          <motion.span
-            key={currentWord + index}
-            initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{
-              delay: index * 0.08,
-              duration: 0.4,
-            }}
-            className="inline-block"
-          >
-            {letter}
-          </motion.span>
-        ))}
-      </motion.div>
+        {/* This invisible div is used to reserve space for the text while it animates */}
+        <div className="invisible">Innovations</div>
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 10,
+          }}
+          animate={{
+            opacity: 1,
+            y: 0,
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 100,
+            damping: 10,
+          }}
+          className={cn("absolute inset-0 whitespace-nowrap")}
+          key={currentWord}
+        >
+          {currentWord.split("").map((letter, index) => (
+            <motion.span
+              key={currentWord + index}
+              initial={{ opacity: 0, y: 10, filter: "blur(8px)" }}
+              animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+              transition={{
+                delay: index * 0.08,
+                duration: 0.4,
+              }}
+              className="inline-block"
+            >
+              {letter}
+            </motion.span>
+          ))}
+        </motion.div>
+      </div>
     </AnimatePresence>
   );
 };
