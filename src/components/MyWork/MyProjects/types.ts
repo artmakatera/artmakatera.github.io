@@ -1,8 +1,10 @@
+import type { ImageMetadata } from "astro";
+
 export interface Project {
   id: number;
   title: string;
   description: string;
-  image: string;
+  image: ImageMetadata;
   link: string;
   linkText: string;
   tags: string[];

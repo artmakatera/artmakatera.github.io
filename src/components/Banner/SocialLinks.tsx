@@ -30,22 +30,23 @@ export const SocialLinks = ({ className }: { className?: string }) => {
   return (
     <div className={cn("grid grid-flow-col justify-center gap-1", className)} role="list" aria-label="Social media links">
       {LINKS.map(({ key, url, icon, ariaLabel }) => (
-        <Button 
-          key={key} 
-          variant="outline" 
-          size="icon" 
-          className="size-9 md:size-11"
-          asChild
-        >
-          <a 
-            href={url}
-            aria-label={ariaLabel}
-            target={url.startsWith('mailto:') ? undefined : '_blank'}
-            rel={url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+        <div key={key} role="listitem">
+          <Button 
+            variant="outline" 
+            size="icon" 
+            className="size-9 md:size-11"
+            asChild
           >
-            {icon}
-          </a>
-        </Button>
+            <a 
+              href={url}
+              aria-label={ariaLabel}
+              target={url.startsWith('mailto:') ? undefined : '_blank'}
+              rel={url.startsWith('mailto:') ? undefined : 'noopener noreferrer'}
+            >
+              {icon}
+            </a>
+          </Button>
+        </div>
       ))}
     </div>
   );

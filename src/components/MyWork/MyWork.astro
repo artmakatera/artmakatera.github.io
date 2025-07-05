@@ -1,8 +1,11 @@
 ---
 import Section from "../ui/Section.astro";
-import MyProjects from "./MyProjects/MyProjects";
+import MyProjects from "./MyProjects/MyProjects.astro";
 ---
 
 <Section id="projects" title="Here's What I Can Share">
-  <MyProjects />
+  <div class="space-y-24" aria-label="Featured Projects">
+
+    <MyProjects />
+  </div>
 </Section>

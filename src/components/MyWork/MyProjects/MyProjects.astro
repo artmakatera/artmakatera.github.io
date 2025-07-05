@@ -1,0 +1,10 @@
+---
+import { projectsData } from "./data";
+import ProjectCard from "./ProjectCard.astro";
+---
+
+<section class="space-y-16" aria-label="Featured Projects">
+  {projectsData.map((project, index) => (
+    <ProjectCard project={project} index={index} />
+  ))}
+</section>

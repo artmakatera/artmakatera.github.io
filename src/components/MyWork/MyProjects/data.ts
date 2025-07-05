@@ -10,8 +10,7 @@ export const projectsData: Project[] = [
     description:
       "A professional portfolio website showcasing photography work with a sleek, responsive design. Built with React and Next.js for fast performance, featuring a CMS for easy content management, PostgreSQL database, and Cloudinary for image hosting. Fully responsive with elegant UI/UX design using Tailwind CSS.",
     image:
-      photographerImage.src ||
-      "https://placehold.co/800x500/E0F2F7/4A235A?text=Photographer+Portfolio",
+      photographerImage,
     link: "https://hosteevaalina.vercel.app/",
     linkText: "View Live Project",
     tags: ["React", "Next.js",  "Photography", "CMS", "PostgreSQL", "Cloudinary", "Responsive Design", "UI/UX", "Tailwind CSS"],
@@ -21,8 +20,7 @@ export const projectsData: Project[] = [
     title: "Algo Circuit - Technical Articles",
     description:
       "An open-source algorithm visualization platform that helps developers understand algorithms and data structures through interactive visual representations. This ongoing project serves as a comprehensive learning resource for computer science students and enthusiasts. Contributions and collaborations are welcome!",
-    image: algoBg.src ||
-      "https://placehold.co/800x500/F0F8FF/36454F?text=Algo+Circuit+Articles",
+    image: algoBg,
     link: "https://algo-curcuit.vercel.app/articles",
     linkText: "Read Articles",
     tags: [ "Algorithms", "Data Structures", "Visualization", "D3.js", "Motion.js"],
