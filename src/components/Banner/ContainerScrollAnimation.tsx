@@ -73,6 +73,8 @@ export const ContainerScroll = ({
           src={keyboardImg.src}
           alt="Banner Laptop"
           className="dark:brightness-60"
+          width={1200}
+          height={90}
         />
       </motion.div>
     </div>
