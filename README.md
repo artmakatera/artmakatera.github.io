@@ -34,7 +34,7 @@ A modern, responsive personal portfolio website featuring smooth animations, dar
 
 1. Clone the repository:
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/artmakatera/artmakatera.github.io.git
 cd personal-website-astro
 ```
 
@@ -101,10 +101,10 @@ This is a personal portfolio website. All rights reserved.
 ## � Contact
 
 **Artem Makatera**
-- Portfolio: [Your Website URL]
-- LinkedIn: [Your LinkedIn]
-- Email: [Your Email]
-- GitHub: [Your GitHub]
+- Portfolio: https://artmakatera.github.io/
+- LinkedIn: https://www.linkedin.com/in/artem-makatera-a19769a0/
+- Email: artmakatera@gmail.com
+- GitHub: https://github.com/artmakatera
 
 ---
 
