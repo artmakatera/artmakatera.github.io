@@ -1,6 +1,5 @@
 import { motion, type MotionStyle } from "motion/react";
 import { AnimatedCard } from "./AnimatedCard";
-import { SocialLinks } from "./SocialLinks";
 
 import avatarSrc from "../../assets/avatar.jpg"; // Adjust the path as necessary
 import { CardTitle } from "../ui/Card/CardTitle";
@@ -8,13 +7,11 @@ import { CardContent } from "../ui/Card/CardContent";
 import { ExperienceCard } from "./cards/Experience";
 import { PulsatingDot } from "../ui/PulsatingDot";
 import { cn } from "../../utils/cn";
-import { Button } from "../ui/Button";
 import { AlgoCircuitCard, PhotographerCard } from "./cards/AlgoCurcuit";
 import { LatestPostsCard } from "./cards/LatestPosts";
 import { AboutCard } from "./cards/About";
 import { ContactCard } from "./cards/Contact";
 import { SkillsCard } from "./cards/Skills";
-import { useEffect, useRef, useState } from "react";
 import { MobileHeader } from "./cards/MobileHeader";
 
 export const ScrollDisplay = ({

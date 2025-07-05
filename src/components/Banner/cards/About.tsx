@@ -18,8 +18,8 @@ export const AboutCard = ({
     >
       <CardTitle>About</CardTitle>
       <CardContent>
-        I'm Artem — a Senior JavaScript Developer with 8+ years of
-        experience building scalable, high-performance web applications. 
+        I'm Artem — a <b>Senior JavaScript Developer</b> with 8+ years of
+        experience building scalable, high-performance web applications.
       </CardContent>
     </AnimatedCard>
   );
