@@ -35,6 +35,7 @@ class ThemeStore {
     this.theme = newTheme;
     if (typeof window !== "undefined") {
       this.applyTheme();
+      localStorage.setItem("theme", newTheme);
     }
     this.emit();
   };

@@ -6,21 +6,30 @@ import avatarSrc from "../assets/avatar.jpg"; // Adjust the path as necessary
 
 <script is:inline>
 	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme') !== 'system') {
 			return localStorage.getItem('theme');
 		}
 		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
  
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
+	const applyTheme = () => {
+		const isDark = getThemePreference() === 'dark';
+		document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+	};
+
+	// Apply the theme on initial load
+	applyTheme();
+
+	// Listen for changes in localStorage
+	window.addEventListener('storage', (event) => {
+		if (event.key === 'theme') {
+			applyTheme();
+		}
+	});
+
+
+ 
 </script>
 
 <!doctype html>
