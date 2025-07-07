@@ -26,7 +26,6 @@ export const ScrollDisplay = ({
     <motion.div
       style={{
         rotateX: rotate, // rotate in X-axis
-        // scale,
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
@@ -35,7 +34,7 @@ export const ScrollDisplay = ({
       <div
         className={cn(
           "bg-secondary dark:bg-background h-full w-full rounded-2xl gap-2 sm:gap-3 overflow-hidden p-0 sm:p-3 ",
-          "grid  sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
+          "grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 "
         )}
       >
         <MobileHeader translate={translate} />
@@ -48,7 +47,7 @@ export const ScrollDisplay = ({
             translateY: translate,
           }}
         >
-          <span>My Profile</span>
+          My Profile
         </motion.div>
 
         <AnimatedCard

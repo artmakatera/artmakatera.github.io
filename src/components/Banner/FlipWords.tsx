@@ -15,13 +15,7 @@ const WORDS = [
   "Solutions",
 ];
 
-export const FlipWords = ({
-  duration = 3000,
-  className,
-}: {
-  duration?: number;
-  className?: string;
-}) => {
+export const FlipWords = () => {
   const [isAnimating, setIsAnimating] = useState<boolean>(true);
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const currentWord = WORDS[currentWordIndex];
@@ -34,7 +28,7 @@ export const FlipWords = ({
         const nextIndex = (currentWordIndex + 1) % WORDS.length;
         setCurrentWordIndex(nextIndex);
         setIsAnimating(true);
-      }, duration);
+      }, 3000);
     }
 
     return () => {
@@ -42,7 +36,7 @@ export const FlipWords = ({
         clearTimeout(timeoutId);
       }
     };
-  }, [duration, currentWordIndex]);
+  }, [currentWordIndex]);
 
   return (
     <AnimatePresence
@@ -52,8 +46,7 @@ export const FlipWords = ({
     >
       <div
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 mx-2",
-          className
+          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 mx-2"
         )}
       >
         {/* This invisible div is used to reserve space for the text while it animates */}
@@ -72,7 +65,7 @@ export const FlipWords = ({
             stiffness: 100,
             damping: 10,
           }}
-          className={cn("absolute inset-0 whitespace-nowrap")}
+          className={cn("absolute inset-0 whitespace-nowrap pl-2")}
           key={currentWord}
         >
           {currentWord.split("").map((letter, index) => (
