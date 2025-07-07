@@ -11,6 +11,11 @@ export const MobileMenu = ({ pages }: MobileMenuProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  const handleSetOpen = (open: boolean) => {
+    setIsOpen(open);
+    document.body.style.overflow = open ? "hidden" : "unset";
+  };
+
   return (
     <motion.nav
       initial={false}
@@ -19,8 +24,8 @@ export const MobileMenu = ({ pages }: MobileMenuProps) => {
       className="h-fit sm:hidden"
     >
       <motion.div className="bg-muted absolute top-0 left-0 bottom-0 w-screen h-screen" variants={sidebarVariants} />
-      <MenuNavigation pages={pages} onPageChange={() => setIsOpen(false)} />
-      <MenuToggle toggle={() => setIsOpen(!isOpen)} />
+      <MenuNavigation pages={pages} onPageChange={() => handleSetOpen(false)} />
+      <MenuToggle toggle={() => handleSetOpen(!isOpen)} />
     </motion.nav>
   );
 };
