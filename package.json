@@ -4,6 +4,19 @@
   "version": "0.0.1",
   "private": true,
   "license": "UNLICENSED",
+  "author": {
+    "name": "Artem Makatera",
+    "email": "artmakatera@gmail.com"
+  },
+  "description": "Personal website built with Astro, React, and Tailwind CSS",
+  "keywords": [
+    "astro",
+    "react",
+    "tailwindcss",
+    "website",
+    "personal",
+    "portfolio"
+  ],
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
@@ -24,6 +37,7 @@
     "motion": "^12.18.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-google-recaptcha-v3": "^1.11.0",
     "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.10"
   }

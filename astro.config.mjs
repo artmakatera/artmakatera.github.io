@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, envField } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 
 import react from "@astrojs/react";
@@ -10,4 +10,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+    env: {
+    schema: {
+      RECAPTCHA_SITE_KEY: envField.string({
+        context: "client", access: "public"
+      }),
+    }
+  }
 });
