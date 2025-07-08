@@ -68,9 +68,14 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
         working-directory: ${{ env.BUILD_PATH }}
-      - name: Build with Astro
+      - name: Set environment variables
         env:
           RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
+        run: |
+          # Optionally, configure the environment if needed for the build process
+          # This might be necessary if you're using a custom build script
+          echo "RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}" >> $GITHUB_ENV
+      - name: Build with Astro
         run: npm run build \
           --site "${{ steps.pages.outputs.origin }}" \
           --base "${{ steps.pages.outputs.base_path }}"
