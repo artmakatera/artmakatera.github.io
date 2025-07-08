@@ -72,9 +72,6 @@
   --sidebar-ring: oklch(0.556 0 0);
 }
 
-
-
-
 @theme {
   --transition-delay-800: 800ms;
 
@@ -110,13 +107,12 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-sm: calc(var(--radius) - 4px);
 
-
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;
-   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+  --animate-scroll: scroll var(--animation-duration, 40s)
+    var(--animation-direction, forwards) linear infinite;
 
-
-   @keyframes scroll {
+  @keyframes scroll {
     to {
       transform: translate(calc(-50% - 0.5rem));
     }
@@ -152,8 +148,6 @@
   }
 }
 
-
-
 @layer base {
   * {
     @apply border-border;
@@ -169,4 +163,8 @@
 
 .cardGradient {
   background: linear-gradient(to top, #dfe9f3 0%, white 100%);
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
 }

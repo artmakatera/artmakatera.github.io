@@ -1,14 +1,14 @@
 ---
-
-import ContactForm from "./ContactForm.tsx";
+import { ContactFormWrapper } from "./ContactFormWrapper.tsx";
 import Section from "../ui/Section.astro";
-
 ---
 
 <Section id="contact" title="Let's Work Together" isMuted>
-  <p class="-mt-8 mb-12 text-xl text-neutral-600 dark:text-muted-foreground max-w-2xl mx-auto">
+  <p
+    class="-mt-8 mb-12 text-xl text-neutral-600 dark:text-muted-foreground max-w-2xl mx-auto"
+  >
     Ready to bring your project to life? Get in touch and {"let's"} discuss how we
     can create something amazing together.
   </p>
-  <ContactForm client:load />
+  <ContactFormWrapper client:load />
 </Section>
