@@ -72,7 +72,6 @@ jobs:
         env:
           RECAPTCHA_SITE_KEY: ${{ secrets.RECAPTCHA_SITE_KEY }}
         run: |
-          # Optionally, configure the environment if needed for the build process
           # This might be necessary if you're using a custom build script
           echo "RECAPTCHA_SITE_KEY=${RECAPTCHA_SITE_KEY}" >> $GITHUB_ENV
       - name: Build with Astro
