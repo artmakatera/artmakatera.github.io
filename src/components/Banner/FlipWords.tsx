@@ -46,7 +46,7 @@ export const FlipWords = () => {
     >
       <div
         className={cn(
-          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 mx-2"
+          "z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 lg:mx-2"
         )}
       >
         {/* This invisible div is used to reserve space for the text while it animates */}
