@@ -11,7 +11,7 @@ export const projectsData: Project[] = [
       "A professional portfolio website showcasing photography work with a sleek, responsive design. Built with React and Next.js for fast performance, featuring a CMS for easy content management, PostgreSQL database, and Cloudinary for image hosting. Fully responsive with elegant UI/UX design using Tailwind CSS.",
     image:
       photographerImage,
-    link: "https://hosteevaalina.vercel.app/",
+    link: "https://www.hosteevaphotography.com/",
     linkText: "View Live Project",
     tags: ["React", "Next.js",  "Photography", "CMS", "PostgreSQL", "Cloudinary", "Responsive Design", "UI/UX", "Tailwind CSS"],
   },

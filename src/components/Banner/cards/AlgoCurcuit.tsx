@@ -79,7 +79,7 @@ export const PhotographerCard = ({
       imageUrl={photographerImage.src}
       backgroundPosition=" center 0px"
       title="Photographer"
-      link="https://hosteevaalina.vercel.app/"
+      link="https://www.hosteevaphotography.com/"
       translate={translate}
     />
   );
