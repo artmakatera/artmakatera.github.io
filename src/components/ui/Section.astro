@@ -10,10 +10,10 @@ const { title, isMuted, id, className } = Astro.props;
 
 <section
   id={id}
-  class:list={["py-16 md:py-24", { "bg-muted": isMuted }, className || ""]}
+  class:list={["pt-8 pb-16 sm:py-16 md:py-24", { "bg-muted": isMuted }, className || ""]}
 >
   <div class="container mx-auto">
-    {title && <h2 class="text-4xl font-bold text-foreground mb-12 text-center">{title}</h2>}
+    {title && <h2 class="text-4xl font-bold text-foreground mb-8 sm:mb-12 text-center">{title}</h2>}
     <slot />
   </div>
 </section>
