@@ -12,15 +12,17 @@ export const ContainerScroll = ({
   titleComponent?: string | ReactNode;
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const [isPhone, setIsPhone] = useState(false);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "center center"],
+    offset: isPhone ? ["start start", "0.125 start"] : ["start start", "center center"],
   });
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth <= 768);
+      setIsPhone(window.matchMedia("(width < 640px)").matches);
     };
     checkMobile();
     window.addEventListener("resize", checkMobile);
@@ -29,16 +31,12 @@ export const ContainerScroll = ({
     };
   }, []);
 
-  const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1];
-  };
-
   const scaleDimensionsKeyBoard = () => {
     return isMobile ? [0.7, 0.9] : [1.2, 1.08];
   };
 
   const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
+  const phoneScale = useTransform(scrollYProgress, [0, 1], [0.85, 0.9]);
   const scaleKeyBoard = useTransform(
     scrollYProgress,
     [0, 1],
@@ -49,16 +47,20 @@ export const ContainerScroll = ({
 
   return (
     <div
-      className="h-[110vh]  [@media(max-height:600px)]:h-[200vh]  flex flex-col items-center justify-center relative md:p-16 lg:p-20 mx-auto max-w-sm sm:max-w-xl  md:max-w-4xl lg:max-w-7xl"
+      className="h-auto min-h-[calc(100svh-4rem)] sm:min-h-0 sm:h-[110vh] sm:[@media(max-height:600px)]:h-[200vh] flex flex-col items-center justify-center relative md:p-16 lg:p-20 mx-auto max-w-sm sm:max-w-xl md:max-w-4xl lg:max-w-7xl"
       ref={containerRef}
     >
-      <div className="pt-32 px-6 sm:px-8 md:pt-40 md:w-[calc(100%-140px)] w-full relative" 
+      <div className="sm:pt-32 px-2 sm:px-8 md:pt-40 md:w-[calc(100%-140px)] w-full relative"
           style={{
           perspective: "1000px",
         }}
       >
         <Header translate={translate} titleComponent={titleComponent} />
-        <ScrollDisplay rotate={rotate} translate={translate} scale={scale} />
+        <ScrollDisplay
+          rotate={rotate}
+          translate={translate}
+          scale={isPhone ? phoneScale : undefined}
+        />
       </div>
       <motion.div
         style={{

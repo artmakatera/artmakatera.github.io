@@ -17,15 +17,17 @@ import { MobileHeader } from "./cards/MobileHeader";
 export const ScrollDisplay = ({
   rotate,
   translate,
+  scale,
 }: {
   rotate: any;
-  scale: any;
+  scale?: MotionStyle["scale"];
   translate?: MotionStyle["translate"];
 }) => {
   return (
     <motion.div
       style={{
         rotateX: rotate, // rotate in X-axis
+        scale,
         boxShadow:
           "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
       }}
