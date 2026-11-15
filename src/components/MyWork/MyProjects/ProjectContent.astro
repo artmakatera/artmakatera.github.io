@@ -48,5 +48,17 @@ const { project } = Astro.props;
       {project.linkText}
       <ExternalLink className="w-4 h-4" />
     </Button>
+    {project.sourceLink && (
+      <a
+        href={project.sourceLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 mt-4 ml-4 text-base font-semibold text-gray-700 dark:text-gray-300 underline underline-offset-4"
+        aria-label={`View source code for ${project.title} on GitHub`}
+      >
+        View on GitHub
+        <ExternalLink className="w-4 h-4" />
+      </a>
+    )}
   </div>
 </div>

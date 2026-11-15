@@ -1,9 +1,22 @@
 import type { Project } from "./types";
 import photographerImage from "../../../assets/photographer.png";
 import algoBg from "../../../assets/algo-bg.png";
+import artToolsImage from "../../../assets/art-tools-marketing.png";
 
 
 export const projectsData: Project[] = [
+  {
+    id: 3,
+    title: "React Gantt Library",
+    description:
+      "A composable React Gantt chart library built to make interactive project scheduling easier to add and customize. Use a ready-made chart or assemble your own layout, with flexible columns and CSS theming to match your application. Virtualized rows and columns keep large timelines responsive, while task hierarchies, dependency-aware rescheduling, drag-to-move and resize, and undo/redo support everyday planning workflows. Live examples and API documentation help developers get started.",
+    image: artToolsImage,
+    link: "https://art-tools-docs.vercel.app/",
+    linkText: "Explore Docs & Examples",
+    sourceLink: "https://github.com/artmakatera/art-tools",
+    tags: ["React", "Gantt Charts", "Component Library", "Virtualization", "Project Scheduling"],
+    imageClassName: "object-contain object-center",
+  },
   {
     id: 1,
     title: "Photographer Portfolio Website",

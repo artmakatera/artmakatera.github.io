@@ -7,6 +7,7 @@ export interface Project {
   image: ImageMetadata;
   link: string;
   linkText: string;
+  sourceLink?: string;
   tags: string[];
   imageClassName?: string; // Optional className for custom styling
 }
